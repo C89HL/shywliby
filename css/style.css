@@ -257,3 +257,31 @@ details div {
     justify-content: center;
     margin-top: 20px;
 }
+/* 手机适配 */
+@media (max-width: 768px) {
+    /* 两栏变一栏 */
+    .two-column-layout {
+        flex-direction: column !important;
+    }
+    
+    /* 侧边栏宽度占满 */
+    .sidebar {
+        width: 100% !important;
+        min-width: auto !important;
+    }
+    
+    /* 容器内边距调小 */
+    .container {
+        padding: 0 10px !important;
+    }
+    
+    /* 标题字体调小 */
+    .header h1 {
+        font-size: 1.8em !important;
+    }
+    
+    /* 按钮调小 */
+    .nav-buttons {
+        flex-wrap: wrap !important;
+    }
+}

@@ -7,16 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>文章浏览器</title>
     <link rel="stylesheet" href="css/style.css">
+   
 </head>
 <body>
-    <!-- 深色模式切换按钮 -->
-    <button onclick="toggleTheme()" style="position: fixed; bottom: 20px; right: 20px; width: 45px; height: 45px; border-radius: 50%; background: #f0f0f0; border: 1px solid #ccc; cursor: pointer; font-size: 20px; z-index: 1000;">
-        🌓
-    </button>
+   <!-- 主题切换开关 -->
+<div class="theme-switch" id="themeSwitch"></div>
     <!-- 顶部标题 -->
     <header class="header">
-        <h1>文章浏览器</h1>
-        <p>上海语文高考作文学习交流群</p>
+        <h1>上海高考语文作文阅读器</h1>
+        
     </header>
     
     <!-- 主内容 -->
@@ -31,7 +30,7 @@
     <!--作者链接--><!---->
     <div class="widget">
         <div class="tag" style="display:block; margin-bottom:10px; background:var(--button-bg); padding:10px; border-radius:5px;">
-            <a href="lz/lz.html" style="color:var(--text-color); text-decoration:none; display:block;">订书机</a>
+            <a href="author/lz.html" style="color:var(--text-color); text-decoration:none; display:block;">订书机</a>
         </div>
     </div>
 </aside>
@@ -42,14 +41,14 @@
             <main class="main-content">
                 <article class="article">
                     <h2>网站说明</h2>
-                    <div class="article-meta">2026年2月19日     Apple苹果</div>
-                    <p>如你所见，这是用来看文章的，由于本人是个大傻子所以不会搞JS，但就看个文章我觉得也用不上JS</p>
-                    <p>所以这个会比较原始，但能看就行为什么要那么多要求对吧</p>
+                    <div class="article-meta">2026年2月24日     Apple苹果</div>
+                    <p>如你所见，这是用来看文章的，由于本人是个大傻子所以可能有不好的地方</p>
+                    <p>但一个新手你指望他能有什么出色的东西吗？</p>
                     <p>那么下面是一些信息</p>
                     <ul style="margin:15px 0; padding-left:20px;">
                         <li style="margin-bottom:8px;">左侧导航栏选择作者即可进入作者在这里的主页</li>
-                        <li style="margin-bottom:8px;">然后在作者主页的左侧导航栏选择文章即可</li>
-                        <li style="margin-bottom:8px;">目前是这么样子的，后续功能让我这个大傻子研究一下吧</li>
+                        <li style="margin-bottom:8px;">然后在作者主页选择作品即可</li>
+                        <li style="margin-bottom:8px;">目前是这么样子的，后续功能我这个大傻子还在研究</li>
                         <li style="margin-bottom:8px;">然后你也别管这个作用大不大，因为不好用可以不用...awa</li>
                         <li>QQ群952281998</li>
                         <li>本网站仅供内部使用...</li>
@@ -60,13 +59,13 @@
                 <h2>更新日志</h2>
                     <ul style="margin:15px 0; padding-left:20px;">
                         <li style="margin-bottom:8px;">2026/2/19 优化了作品界面</li>
-                        <li style="margin-bottom:8px;">2026/2/20 将作品《林芊然》前传部分进行了章节划分</li>
-                        <li style="margin-bottom:8px;">2026/2/20 优化了章节目录</li>
-                        <li style="margin-bottom:8px;">2026/2/20 优化了网页结构和样式</li>
-                        <li style="margin-bottom:8px;">2026/2/21 更改了文章的显示</li>
-                        <li style="margin-bottom:8px;">2026/2/21 增加了深色模式，点击右下角按钮可切换</li>
-                        <li style="margin-bottom:8px;">2026/2/21 优化了手机适配</li>
-                        <li style="margin-bottom:8px;">2026/2/21 改了一大堆bug，反正就是一大堆</li>
+                        <li style="margin-bottom:8px;">2026/2/23 优化了全站结构</li>
+                        <li style="margin-bottom:8px;">2026/2/23 优化了阅读体验</li>
+                        <li style="margin-bottom:8px;">2026/2/23 在阅读页新增了底部操作栏</li>
+                        <li style="margin-bottom:8px;">2026/2/23 使用了新的目录样式，并放到了底部栏</li>
+                        <li style="margin-bottom:8px;">2026/2/24 优化了深色模式开关</li>
+                        <li style="margin-bottom:8px;">2026/2/24 将阅读页底部功能添加了主题切换</li>
+                        <li style="margin-bottom:8px;">2026/2/24 更改了阅读页顶部背景图片</li>
                     </ul>
                 </article>
             </main>
@@ -91,13 +90,16 @@
         </section>
     </div>
     
-    <!-- 页脚 -->
-    <footer class="footer">
-        <p>文章浏览器</p>
-        <div style="margin-top:15px;">
-            <a href="#" style="color:#3498db; margin:0 10px; text-decoration:none;">回到顶部</a>
-        </div>
-    </footer>
-    <script src="../theme.js"></script><!--存主题样式的js-->
+   <!-- 页脚 -->
+<footer class="footer">
+    <p>上海高考语文作文阅读器</p>
+    <div style="margin-top:15px; display: flex; justify-content: center; gap: 20px; align-items: center;">
+        <a href="https://qm.qq.com/cgi-bin/qm/qr?authKey=Bd+5KnExrObTMBwnm8Y8uaS6MsE+xs6GXZnVhNNbJUcoio3LzFKLOXve&jump_from=webapi&qr=Pp7vv1RTPib4sX4K7YEogZ0FiiaPFrvx" target="_blank">
+            <img src="../images/qqgroup.svg" alt="加入QQ群" style="width: 100px; height: 30px;">
+        </a>
+        <a href="#" style="color:#3498db; text-decoration:none;">回到顶部</a>
+    </div>
+</footer>
+    <script src="js/theme.js"></script><!--存主题样式的js-->
 </body>
 </html>

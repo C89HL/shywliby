@@ -34,6 +34,73 @@ body.dark-theme {
     --shadow: rgba(0,0,0,0.3);
 }
 
+/* ===== 主题切换胶囊开关 ===== */
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 30px;
+    background: #87CEEB;  /* 日间：天空蓝 */
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: background 0.3s ease;
+    overflow: hidden;
+}
+
+body.dark-theme .theme-switch {
+    background: #1a1a2e;  /* 夜间：深空色 */
+}
+
+/* 滑钮 */
+.theme-switch::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px; right: auto;
+    width: 26px;
+    height: 26px;
+    background: #FDB813;  /* 太阳黄 */
+    border-radius: 50%;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* 太阳光晕 */
+.theme-switch::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 14px;
+    height: 14px;
+    background: rgba(255, 215, 0, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+body.dark-theme .theme-switch::before {
+    transform: translateX(30px);
+    background: #F0F0F0;  /* 月亮白 */
+    box-shadow: inset -2px -2px 0 #aaa, 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* 月亮陨石坑 */
+body.dark-theme .theme-switch::before {
+    background: radial-gradient(circle at 30% 30%, #aaa 2px, transparent 2px),
+                radial-gradient(circle at 60% 60%, #999 3px, transparent 3px),
+                radial-gradient(circle at 70% 30%, #bbb 2px, transparent 2px);
+    background-color: #F0F0F0;
+    background-size: 8px 8px, 10px 10px, 6px 6px;
+    background-repeat: no-repeat;
+    background-position: 6px 6px, 14px 14px, 18px 6px;
+}
+
+
+
 body {
     background: var(--bg-color);
     min-height: 100vh;
@@ -295,3 +362,362 @@ details div {
         padding: 15px !important;
     }
 }
+/*grid适配*/
+@media (max-width: 768px){
+    .reader-grid{
+        grid-template-columns: 1fr !important;
+    }
+
+    .reader-grid .sidebar{
+        display: none !important;
+    }
+}
+/*Grid布局*/
+.reader-grid .header{
+    grid-column: 1 / -1;
+}
+
+.reader-grid .sidebar{
+    grid-row: 2 / 3;
+}
+
+.reader-grid .reading-area{
+    grid-row: 2 / 3;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.reader-grid .reader-footer{
+    grid-column: 1/-1;
+    grid-row: 3 / 4;
+}
+
+/* ===== 底部阅读控制栏 ===== */
+.reading-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--sidebar-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 8px 12px;
+    box-shadow: 0 -2px 10px var(--shadow);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.reading-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 8px;
+}
+
+/* 控制组 */
+.reading-bar-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--button-bg);
+    border-radius: 24px;
+    padding: 4px;
+}
+
+/* 控制按钮 */
+.reading-bar-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    padding: 6px 8px;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0.8;
+}
+
+.reading-bar-btn span:first-child {
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.reading-bar-btn span:last-child {
+    font-size: 10px;
+    opacity: 0.7;
+    margin-top: 2px;
+}
+
+.reading-bar-btn:active {
+    background: var(--button-hover);
+    opacity: 1;
+}
+
+/* 禁用状态 */
+.reading-bar-btn.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* 字体大小显示 */
+.font-size-value {
+    min-width: 40px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 给底部留出空间 */
+.reading-area {
+    padding-bottom: 80px !important;
+}
+
+/* 手机适配优化 */
+@media (max-width: 480px) {
+    .reading-bar-container {
+        gap: 4px;
+    }
+    
+    .reading-bar-btn {
+        min-width: 50px;
+        padding: 4px 6px;
+    }
+    
+    .reading-bar-btn span:first-child {
+        font-size: 16px;
+    }
+    
+    .reading-bar-btn span:last-child {
+        font-size: 9px;
+    }
+}
+
+/* ===== 弹窗目录样式 ===== */
+.chapter-drawer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 400px;
+    height: 70vh;
+    background: var(--sidebar-bg);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 2000;
+    box-shadow: 0 -5px 20px var(--shadow);
+}
+
+.chapter-drawer.show {
+    transform: translateY(0);
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.drawer-header h3 {
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.close-drawer {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0 8px;
+}
+
+.drawer-content {
+    padding: 16px;
+    height: calc(70vh - 60px);
+    overflow-y: auto;
+}
+
+/* 遮罩层 */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.drawer-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 电脑端适配 */
+@media (min-width: 769px) {
+    .chapter-drawer {
+        max-width: 350px;
+        height: 60vh;
+        left: 20px;
+        bottom: 20px;
+        border-radius: 16px;
+        transform: translateX(-120%);
+    }
+    
+    .chapter-drawer.show {
+        transform: translateX(0);
+    }
+}
+
+/* ===== 弹窗目录样式 ===== */
+.chapter-drawer {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background: var(--sidebar-bg);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -5px 20px var(--shadow);
+    z-index: 2000;
+    transition: transform 0.3s ease;
+}
+
+/* 手机端：从底部弹出，占70%屏幕 */
+@media (max-width: 768px) {
+    .chapter-drawer {
+        bottom: 0;
+        height: 70vh;
+        transform: translateY(100%);
+    }
+    
+    .chapter-drawer.show {
+        transform: translateY(0);
+    }
+}
+
+/* 电脑端：在目录按钮上方，居中显示 */
+@media (min-width: 769px) {
+    .chapter-drawer {
+        bottom: 80px;  /* 在底部栏上方 */
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        width: 400px;
+        max-height: 500px;
+        border-radius: 16px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease;
+        box-shadow: 0 5px 20px var(--shadow);
+    }
+    
+    .chapter-drawer.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* 防止目录打开时背景滚动 */
+body.drawer-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* 目录内容独立滚动 */
+.drawer-content {
+    max-height: calc(70vh - 60px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 电脑端内容高度 */
+@media (min-width: 769px) {
+    .drawer-content {
+        max-height: 440px;
+    }
+}
+
+/* 遮罩层只用于手机 */
+@media (max-width: 768px) {
+    .drawer-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .drawer-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media (min-width: 769px) {
+    .drawer-overlay {
+        display: none;
+    }
+}
+
+/* ===== 目录列表样式 ===== */
+.chapter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chapter-list li {
+    margin-bottom: 10px;
+}
+
+.chapter-list a {
+    display: block;
+    padding: 14px 18px;
+    background: var(--button-bg);
+    border-radius: 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 15px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+}
+
+.chapter-list a:hover {
+    background: var(--button-hover);
+    transform: translateX(4px);
+}
+
+.chapter-list a.active {
+    background: var(--link-color);
+    color: white;
+    border-color: var(--link-color);
+}
+
+/* 手机端大一点 */
+@media (max-width: 768px) {
+    .chapter-list a {
+        padding: 16px 18px;
+        font-size: 16px;
+    }
+}
+

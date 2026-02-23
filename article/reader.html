@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上海高考语文作文阅读器</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!--Grid主容器-->
+    <div class="reader-grid">
+        <!--顶部导航区-->
+      <header class="header" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../images/skyback.webp') center/cover;">
+            <div class="header-container">
+                <h1 id="bookTitleDisplay">上海高考语文作文阅读器</h1>
+                <nav class="top-nav">
+                    <a href="../index.html">主页</a>
+                    <a href="#" id="authorHomeLink">作者主页</a>
+                </nav> 
+            </div>
+        </header>
+
+        <!--侧边栏目录区域-->
+       <!-- 弹窗目录（默认隐藏） -->
+<div class="chapter-drawer" id="chapterDrawer">
+    <div class="drawer-header">
+        <h3>章节目录</h3>
+        <button class="close-drawer" id="closeDrawer">✕</button>
+    </div>
+    <div class="drawer-content">
+        <ul id="chapterList" class="chapter-list">
+            <!-- JS动态生成列表 -->
+        </ul>
+    </div>
+</div>
+
+<!-- 遮罩层 -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+
+
+        <!--阅读区-->
+        <main class="reading-area">
+            <article class="article">
+                <h2 id="chapterTitle" class="chapter-title">请选择章节</h2>
+                <div id="content" class="article-content">
+                    <p class="placeholder">从左侧选择章节</p>
+                </div>
+            </article>
+        </main>
+
+      
+
+        <!--JS-->
+        <script type="module" src="../js/reader.js"></script>
+        <!-- 底部阅读控制栏 -->
+<div class="reading-bar">
+    <div class="reading-bar-container">
+        <!-- 字体控制组 -->
+        <div class="reading-bar-group">
+            <button class="reading-bar-btn" id="fontDecrease">
+                <span>A-</span>
+                <span>字号</span>
+            </button>
+            <span class="font-size-value" id="fontSizeDisplay">16</span>
+            <button class="reading-bar-btn" id="fontIncrease">
+                <span>A+</span>
+                <span>字号</span>
+            </button>
+        </div>
+        <!--主题切换-->
+        <button class="reading-bar-btn" id="themeToggleReader">
+            <span id="themeIcon">夜间</span>
+            <span>主题</span>
+        </button>
+        <!-- 目录按钮 -->
+        <button class="reading-bar-btn" id="menuToggle">
+            <span>☰</span>
+            <span>目录</span>
+        </button>
+        
+        <!-- 翻页控制组 -->
+        <div class="reading-bar-group">
+            <button class="reading-bar-btn" id="prevChapterBtn">
+                <span>←</span>
+                <span>上一章</span>
+            </button>
+            <button class="reading-bar-btn" id="nextChapterBtn">
+                <span>→</span>
+                <span>下一章</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- 回到顶部按钮 -->
+<div id="backToTop" class="back-to-top">
+    <div class="back-to-top-icon">↑</div>
+    <div class="back-to-top-text">回到顶部</div>
+</div>
+</body>
+</html>

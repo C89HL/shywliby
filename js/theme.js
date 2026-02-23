@@ -1,4 +1,4 @@
- // 检查本地存储的主题设置
+// 检查本地存储的主题设置
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-theme');
 }
@@ -14,6 +14,9 @@ function toggleTheme() {
         localStorage.setItem('theme', 'light');
     }
 }
+
+// 监听开关点击
+document.getElementById('themeSwitch')?.addEventListener('click', toggleTheme);
 
 // 监听系统主题变化
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {

@@ -1,0 +1,49 @@
+{
+    "林芊然前传": {
+        "path": "lqr1/",
+        "authorPage": "../author/lz.html",
+        "chapters": [
+            {"file": "lz-1-1.txt", "title": "第一章：前言"},
+            {"file": "lz-1-1.1.txt", "title": "第二章：张大夫"},
+            {"file": "lz-1-1.2.txt", "title": "第三章：冒险"},
+            {"file": "lz-1-1.3.txt", "title": "第四章：弟弟的金鱼"},
+            {"file": "lz-1-1.4.txt", "title": "第五章：学习之旅"},
+            {"file": "lz-1-1.5.txt", "title": "第六章：丁琳娜"},
+            {"file": "lz-1-1.6.txt", "title": "第七章：庄园"},
+            {"file": "lz-1-1.7.txt", "title": "第八章：椅子小哲"},
+            {"file": "lz-1-1.8.txt", "title": "第九章：成长"},
+            {"file": "lz-1-1.9.txt", "title": "第十章：地下通道"},
+            {"file": "lz-1-1.10.txt", "title": "第十一章：这是真相吗"},
+            {"file": "lz-1-1.11.txt", "title": "第十二章：审判"}
+        ]
+    },
+    "林芊然代理人": {
+        "path": "lqr2/",
+         "authorPage": "../author/lz.html",
+        "chapters": [
+            {"file": "lz-2-1.txt", "title": "第十三章：魔术师"},
+            {"file": "lz-2-1dlc.txt", "title": "第十三章：魔术师（扩展）"},
+            {"file": "lz-2-1.1.txt", "title": "第十四章：交易"}
+        ]
+    },
+     "温柔乡1941": {
+        "path": "wrx1941/",
+         "authorPage": "../author/lz.html",
+        "chapters": [
+            {"file": "wrx1941-1.txt", "title": "第一章"},
+            {"file": "wrx1941-1.2.txt", "title": "第二章：阁楼的倾诉"},
+            {"file": "wrx1941-1.3.txt", "title": "第三章：庭深蔷薇香"},
+            {"file": "wrx1941-1.4.txt", "title": "第四章：杀戮"},
+            {"file": "wrx1941-1.5.txt", "title": "第五章：归墟"},
+            {"file": "wrx1941-1.6.txt", "title": "第六章：融合"},
+            {"file": "wrx1941-1.7.txt", "title": "第七章：吞咽"}
+        ]
+    },
+    "不可承受的生命之重": {
+        "path": "bkcsdsmzz/",
+         "authorPage": "../author/lz.html",
+        "chapters": [
+            {"file": "lz-2-1.txt", "title": "第一章"}
+        ]
+    }
+}

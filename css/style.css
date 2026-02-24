@@ -721,3 +721,36 @@ body.drawer-open {
     }
 }
 
+/* ===== 手机端底部栏优化 ===== */
+@media (max-width: 480px) {
+    .reading-bar-container {
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: center;
+    }
+    
+    .reading-bar-group {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+    }
+    
+    .reading-bar-btn {
+        min-width: 45px;
+        padding: 4px 4px;
+    }
+    
+    .reading-bar-btn span:first-child {
+        font-size: 14px;
+    }
+    
+    .reading-bar-btn span:last-child {
+        font-size: 8px;
+    }
+    
+    /* 单独按钮（主题、目录）也调整 */
+    .reading-bar-btn:not(.reading-bar-group .reading-bar-btn) {
+        min-width: 45px;
+        padding: 4px 4px;
+    }
+}

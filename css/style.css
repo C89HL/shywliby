@@ -706,20 +706,21 @@ body.drawer-open {
 @media (max-width: 480px) {
     .reading-bar-container {
         display: grid !important;
-        grid-template-columns: 1fr 0.8fr 1fr !important;  /* 中间列稍宽 */
-        gap: 2px;
+        grid-template-columns: 1fr 0.8fr 1fr !important;
+        gap: 4px;
         align-items: center;
     }
     
     .reading-bar {
-        padding: 2px 2px;
+        padding: 4px 4px;
     }
     
     .reading-bar-group {
         display: flex !important;
         justify-content: center;
-        padding: 0;
-        background: transparent;
+        padding: 2px;
+        background: var(--button-bg);
+        border-radius: 24px;
     }
     
     /* 字体控制组（左侧） */
@@ -727,40 +728,41 @@ body.drawer-open {
         justify-content: flex-start;
     }
     
-    /* 翻页控制组（中间）- 保持居中 */
+    /* 翻页控制组（中间） */
     .reading-bar-group:last-child {
         justify-content: center;
     }
     
     .reading-bar-btn {
-        min-width: 30px !important;
-        padding: 2px 0 !important;
-        background: var(--button-bg);
-        border-radius: 16px;
-        margin: 0 1px;
+        min-width: 40px !important;
+        padding: 6px 4px !important;
+        background: transparent;
+        border-radius: 20px;
+        margin: 0 2px;
     }
     
     .reading-bar-btn span:first-child {
-        font-size: 12px !important;
+        font-size: 16px !important;
     }
     
     .reading-bar-btn span:last-child {
-        font-size: 6px !important;
-        margin-top: 0 !important;
+        font-size: 9px !important;
+        margin-top: 2px !important;
     }
     
     .font-size-value {
-        min-width: 20px !important;
-        font-size: 10px !important;
-        background: var(--button-bg);
-        border-radius: 16px;
-        padding: 2px 0;
-        text-align: center;
+        min-width: 30px !important;
+        font-size: 14px !important;
+        background: transparent;
+        padding: 4px 0;
     }
     
-    /* 单独按钮（主题、目录）- 放在右侧 */
+    /* 单独按钮（主题、目录） */
     #themeToggleReader, #menuToggle {
-        min-width: 40px !important;
+        min-width: 45px !important;
+        padding: 6px 4px !important;
+        background: var(--button-bg);
+        border-radius: 24px;
         justify-self: end;
     }
 }

@@ -43,7 +43,7 @@
         "path": "bkcsdsmzz/",
          "authorPage": "../author/lz.html",
         "chapters": [
-            {"file": "lz-2-1.txt", "title": "第一章"}
+            {"file": "01.txt", "title": "第一章"}
         ]
     }
 }

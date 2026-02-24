@@ -783,3 +783,63 @@ body.drawer-open {
         justify-self: end;
     }
 }
+
+/* ===== 回到顶部按钮 ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 100px;  /* 底部栏上方 */
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--button-bg);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px var(--shadow);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top-icon {
+    font-size: 24px;
+    line-height: 1;
+    color: var(--text-color);
+    margin-top: -2px;
+}
+
+.back-to-top-text {
+    font-size: 8px;
+    color: var(--text-color);
+    opacity: 0.8;
+    white-space: nowrap;
+    margin-top: -2px;
+}
+
+/* 手机端适配 */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 90px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .back-to-top-icon {
+        font-size: 22px;
+    }
+    
+    .back-to-top-text {
+        font-size: 7px;
+    }
+}

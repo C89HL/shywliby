@@ -352,16 +352,7 @@ details div {
         flex-wrap: wrap !important;
     }
 }
-/* 更小的屏幕 */
-@media (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-    
-    .sidebar, .main-content {
-        padding: 15px !important;
-    }
-}
+
 /*grid适配*/
 @media (max-width: 768px){
     .reader-grid{
